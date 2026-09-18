@@ -70,7 +70,7 @@ def obtener_indicadores(datos: BuscarRequest, db: Session = Depends(get_db)):
     cc = datos.cc.strip()
     if not cc:
         raise HTTPException(status_code=400, detail="La cédula no puede estar vacía.")
-    hoy  = date.today() - timedelta(days=120)
+    hoy  = date.today()
     mes  = hoy.month
     anio = hoy.year
     # ── 1. Verifica que el técnico existe en conformacion ─────────────────────
